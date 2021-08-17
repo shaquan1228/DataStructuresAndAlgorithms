@@ -1,0 +1,7 @@
+{
+    "eslint.format.enable": true,
+    "editor.formatOnSave": true,
+    "editor.comments.ignoreEmptyLines": false,
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    "prettier.bracketSpacing": false
+}
