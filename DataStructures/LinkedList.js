@@ -1,4 +1,4 @@
-var Node = function(data){
+var Node = function (data) {
     data = data || null;
     this.data = data;
     this.next = null;
@@ -11,11 +11,11 @@ var Node = function(data){
 * @param {anyType} data
 * @return {void}
 */
-Node.prototype.appendToTail = function(data){
+Node.prototype.appendToTail = function (data) {
     const n = this;
     let newNode = new Node(data)
     //If our LinkedList has a tail, make the tail's previous node reference the new node. 
-    if(n.tail)
+    if (n.tail)
         n.tail.next = newNode;
     newNode.previous = n.tail;
     n.tail = newNode;
@@ -25,7 +25,7 @@ Node.prototype.appendToTail = function(data){
 /*
 * Initialize your data strucutre  here.
 */
-var LinkedList = function(){
+var LinkedList = function () {
     this.head = null
     this.tail = null
 }
@@ -35,16 +35,16 @@ var LinkedList = function(){
 * @param {anyType} data
 * @return {void}
 */
-LinkedList.prototype.add = function(data){
+LinkedList.prototype.add = function (data) {
     let newNode = new Node(data);
     const n = this;
     newNode.next = n.head;
     //If the original head exists, make its previous node reference the new node.
-    if(n.head) 
+    if (n.head)
         n.head.previous = newNode;
     n.head = newNode;
     //If added node does not have a proceeding node, make the newly appended node the tail. n.head.next is the same as newNode.next or n.head
-    if(!newNode.next)
+    if (!newNode.next)
         n.tail = newNode
 }
 
@@ -54,20 +54,20 @@ LinkedList.prototype.add = function(data){
 * @param {int} key
 * @return {void}
 */
-LinkedList.prototype.removeFrom = function(searchIndex){
+LinkedList.prototype.removeFrom = function (searchIndex) {
     const n = this;
     let count = 0;
     let currentNode = this.head;
-    
-    while(currentNode){
-        if(count===searchIndex){
-            if(searchIndex===0)
+
+    while (currentNode) {
+        if (count === searchIndex) {
+            if (searchIndex === 0)
                 n.head = currentNode.next;
-            if(currentNode.previous)
+            if (currentNode.previous)
                 currentNode.previous.next = currentNode.next;
-            if(currentNode.next)
+            if (currentNode.next)
                 currentNode.next.previous = currentNode.previous;
-            if(!currentNode.next)
+            if (!currentNode.next)
                 n.tail = currentNode.previous;
             return currentNode;
         }
@@ -82,7 +82,7 @@ LinkedList.prototype.removeFrom = function(searchIndex){
 * @param {int} key
 * @return {void}
 */
-LinkedList.prototype.remove = function(){
+LinkedList.prototype.remove = function () {
     return this.removeFrom(0);
 }
 
@@ -90,10 +90,10 @@ LinkedList.prototype.remove = function(){
 * Returns the size of the LinkedList.
 * @return {number} The number of elements in the list.
 */
-LinkedList.prototype.size = function(){
+LinkedList.prototype.size = function () {
     let count = 0;
     let n = this.head;
-    while(n){
+    while (n) {
         count++;
         n = n.next;
     }

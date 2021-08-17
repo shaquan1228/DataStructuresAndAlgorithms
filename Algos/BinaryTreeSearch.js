@@ -5,10 +5,10 @@ var BinaryTreeSearch = {
     * {@param} Node node with a left and right attribute
     * @param {func} visit function to perform when a node is visited. Often times, console.log is a good function to pass
     */
-    inOrderTraversal : function(node, visit){
-   
+    inOrderTraversal: function (node, visit) {
+
         visit = visit || console.log;
-        if (node !== null){
+        if (node !== null) {
             this.inOrderTraversal(node.left, visit)
             visit(node)
             this.inOrderTraversal(node.right, visit)
@@ -20,10 +20,10 @@ var BinaryTreeSearch = {
     * {@param} Node node with a left and right attribute
     * @param {func} visit function to perform when a node is visited. Often times, console.log is a good function to pass
     */
-    postOrderTraversal : function(node, visit){
+    postOrderTraversal: function (node, visit) {
         visit = visit || console.log;
 
-        if( node !== null){
+        if (node !== null) {
             this.postOrderTraversal(node.left, visit);
             this.postOrderTraversal(node.right, visit);
             visit(node);
@@ -36,13 +36,13 @@ var BinaryTreeSearch = {
     * {@param} Node node with a left and right attribute
     * @param {func} visit function to perform when a node is visited. Often times, console.log is a good function to pass
     */
-    preOrderTraversal : function(node, visit){
+    preOrderTraversal: function (node, visit) {
         visit = visit || console.log;
-        
-        if( node !== null){
+
+        if (node !== null) {
             visit(node);
             this.preOrderTraversal(node.left, visit);
-            this.preOrderTraversal(node.right,visit);
+            this.preOrderTraversal(node.right, visit);
 
         }
     }

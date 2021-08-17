@@ -2,8 +2,8 @@
  * Initializes a Node when given data.
  * @param {Any Type} data
 */
-var Node = function(data){
-    data = data  || null ;
+var Node = function (data) {
+    data = data || null;
     this.data = data;
     this.next = null;
 }
@@ -11,7 +11,7 @@ var Node = function(data){
 /**
  * Default constructor. Initializes the Stack data structure. 
  */
- var Stack = function() {
+var Stack = function () {
     this.top = null;
 };
 
@@ -19,7 +19,7 @@ var Node = function(data){
  * Initialize the Stack data structure when given data.
  * @param {Any Type} data
  */
- var Stack = function(item) {
+var Stack = function (item) {
     this.top = new Node(item);
 };
 
@@ -29,10 +29,10 @@ var Node = function(data){
  * 
  * @return {Any Type} The data from the last Node in the Stack.
  */
-Stack.prototype.pop = function(){
-    if(this.top === null)
+Stack.prototype.pop = function () {
+    if (this.top === null)
         return null;
-    
+
     let returnValue = this.top.data;
     this.top = this.top.next;
     return returnValue;
@@ -42,7 +42,7 @@ Stack.prototype.pop = function(){
  * Adds an element to the top of the Stack data strcture.
  * @param {Any Type} item 
  */
-Stack.prototype.push = function(item){
+Stack.prototype.push = function (item) {
     let newNode = new Node(item);
     newNode.next = this.top;
     this.top = newNode;
@@ -52,8 +52,8 @@ Stack.prototype.push = function(item){
  * Shows the last element in the Stack data structure without removing it.
  * @return {Any Type} The data from the last node in the Stack.
  */
-Stack.prototype.peek = function (){
-    if(this.top === null)
+Stack.prototype.peek = function () {
+    if (this.top === null)
         return null;
     return this.top.data;
 }
@@ -62,8 +62,8 @@ Stack.prototype.peek = function (){
  * Detects if the Stack data structure is empty.
  * @return {Boolean} If the Stack is empty or not.
  */
- Stack.prototype.isEmpty = function (){
-   return (this.top === null);
+Stack.prototype.isEmpty = function () {
+    return (this.top === null);
 }
 
 
