@@ -6,6 +6,7 @@ var HashMap = function () {
 };
 
 /** 
+ * Generates a hash code for any data provided.
  * @param {number or string}  key
  * @return {number} hashCode 
 **/
@@ -19,7 +20,7 @@ HashMap.prototype.hashCode = function (key) {
 
 
 /**
- * 
+ * Inserts an element into the Hash Map.
  * @param {number or string} key value should always be non-negative. 
  * @param {anyType} value
  * @return {void}

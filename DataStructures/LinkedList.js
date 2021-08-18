@@ -6,7 +6,7 @@ var Node = function (data) {
 }
 
 
-/*
+/**
 * Adds Node to the end of the LinkedList.
 * @param {anyType} data
 * @return {void}
@@ -22,7 +22,7 @@ Node.prototype.appendToTail = function (data) {
 }
 
 
-/*
+/**
 * Initialize your data strucutre  here.
 */
 var LinkedList = function () {
@@ -30,7 +30,7 @@ var LinkedList = function () {
     this.tail = null
 }
 
-/*
+/**
 * Adds Node to the beginning of the LinkedList.
 * @param {anyType} data
 * @return {void}
@@ -49,7 +49,7 @@ LinkedList.prototype.add = function (data) {
 }
 
 
-/*
+/**
 * Removes and returns a node from any position in the LinkedList.
 * @param {int} key
 * @return {void}
@@ -77,7 +77,7 @@ LinkedList.prototype.removeFrom = function (searchIndex) {
     return null;
 }
 
-/*
+/**
 * Removes and returns the first node from any position in the LinkedList.
 * @param {int} key
 * @return {void}
@@ -86,7 +86,7 @@ LinkedList.prototype.remove = function () {
     return this.removeFrom(0);
 }
 
-/*
+/**
 * Returns the size of the LinkedList.
 * @return {number} The number of elements in the list.
 */

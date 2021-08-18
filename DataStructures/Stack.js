@@ -26,7 +26,6 @@ var Stack = function (item) {
 /**
  * Removes the last element in the Stack data structure.
  * The last element in the Stack is at the top of the data structure.
- * 
  * @return {Any Type} The data from the last Node in the Stack.
  */
 Stack.prototype.pop = function () {
