@@ -82,17 +82,17 @@ BinaryTree.prototype.remove = function (dataBeingRemoved) {
                 nodeBeingIterated = setChildrenOfNodeFound(nodeBeingIterated);
                 return nodeBeingIterated;
             }
-        if (nodeBeingIterated.left !== null && nodeBeingIterated.left.data === dataBeingRemoved) {
+            else if (nodeBeingIterated.left !== null && nodeBeingIterated.left.data === dataBeingRemoved) {
 
-            nodeBeingIterated.left = setChildrenOfNodeFound(nodeBeingIterated.left);
-            return nodeBeingIterated;
-        }
+                nodeBeingIterated.left = setChildrenOfNodeFound(nodeBeingIterated.left);
+                return nodeBeingIterated;
+            }
 
-        else if (nodeBeingIterated.right !== null && nodeBeingIterated.right.data === dataBeingRemoved) {
+            else if (nodeBeingIterated.right !== null && nodeBeingIterated.right.data === dataBeingRemoved) {
 
-            nodeBeingIterated.right = setChildrenOfNodeFound(nodeBeingIterated.right);
-            return nodeBeingIterated;
-        }
+                nodeBeingIterated.right = setChildrenOfNodeFound(nodeBeingIterated.right);
+                return nodeBeingIterated;
+            }
     }
 
 

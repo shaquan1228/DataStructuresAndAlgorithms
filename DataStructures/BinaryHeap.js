@@ -12,7 +12,7 @@ var Node = function (data) {
 };
 
 /**
- * Initializes a Binary Tree data structure.
+ * Initializes a Binary Min Heap data structure.
  * @param {Any Type} data or null
  */
 var BinaryHeap = function (data) {
@@ -22,7 +22,7 @@ var BinaryHeap = function (data) {
 };
 
 /**
- * Instantiates a node from Any Type of data and appends it to a Binary Tree.
+ * Instantiates a node from Any Type of data and appends it to a Binary Heap.
  * Leaf nodes are appended to to the left first.
  * @param {Any Type} data
  */
@@ -35,6 +35,12 @@ BinaryHeap.prototype.insert = function (data) {
     this.fixTree(this.root, newNode);
   }
 };
+/**
+ * 
+ * @param {Node} currentNode A node in the Binary Heap.
+ * @param {Node} insertedNode A node that we'd like to compare our current node to.
+ * @return {function}
+ */
 
 BinaryHeap.prototype.fixTree = function (currentNode, insertedNode) {
   if (currentNode !== null) {
@@ -67,7 +73,11 @@ BinaryHeap.prototype.fixTree = function (currentNode, insertedNode) {
     }
   }
 };
-
+/**
+ * 
+ * @param {Node} node  A node in the Binary Heap.
+ * @param {Node} newNode  A node that's will be inserted into the Binary Heap.
+ */
 BinaryHeap.prototype.recursivelyInsert = function (node, newNode) {
   if (node.left === null) return (node.left = newNode);
   else if (node.right === null) return (node.right = newNode);
@@ -80,6 +90,10 @@ BinaryHeap.prototype.recursivelyInsert = function (node, newNode) {
   else return this.recursivelyInsert(node.left, newNode);
 };
 
+/**
+ * The minimum value is extracted from the Binary Heap. Then, the tree is fixed to remain a Binary Min Heap.
+ * @return Minimum value in the Binary Heap
+ */
 BinaryHeap.prototype.extractMin = function () {
   let returnValue = this.root;
 
@@ -105,37 +119,19 @@ BinaryHeap.prototype.extractMin = function () {
   this.root.left = returnValue.left;
   this.root.right = returnValue.right;
 
-  //Now I will use the extraMinHelper to find the min
-  this.extractMinHelper(this.root, this.root);
-  return returnValue;
-};
-
-BinaryHeap.prototype.extractMinHelper = function (currentNode, insertedNode) {
+  //Now I will find the min node
   var minNode = this.root;
   let findMin = function (currentNode) {
     if (currentNode.data < minNode.data) minNode = currentNode;
   };
+  //And fix the tree by replacing root with the current minimum.
   BTSLibrary.inOrderTraversal(this.root, findMin);
   this.fixTree(this.root, minNode);
+
+  return returnValue;
 };
 
-let myHeap = new BinaryHeap();
-myHeap.insert(14);
 
-myHeap.insert(50);
-myHeap.insert(7);
 
-myHeap.insert(55);
-myHeap.insert(90);
-myHeap.insert(87);
-myHeap.insert(2);
-
-myHeap.insert(10);
-myHeap.insert(1);
-myHeap.insert(1);
-
-//console.log(myHeap);
-myHeap.extractMin();
-console.log(myHeap);
 
 module.exports = BinaryHeap;

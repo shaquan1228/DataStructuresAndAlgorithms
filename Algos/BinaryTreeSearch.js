@@ -53,7 +53,7 @@ var BinaryTreeSearch = {
 
 
 
-module.exports = BinaryTreeSearch
+module.exports = BinaryTreeSearch;
 
 
 

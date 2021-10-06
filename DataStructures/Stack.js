@@ -8,19 +8,17 @@ var Node = function (data) {
     this.next = null;
 }
 
-/**
- * Default constructor. Initializes the Stack data structure. 
- */
-var Stack = function () {
-    this.top = null;
-};
 
 /**
  * Initialize the Stack data structure when given data.
  * @param {Any Type} data
  */
 var Stack = function (item) {
-    this.top = new Node(item);
+    item = item || null;
+    if (item !== null)
+        this.top = new Node(item);
+    else
+        this.top = null;
 };
 
 /**
